@@ -11,14 +11,14 @@ const app = express();
 // MIDDLEWARE
 app.use(cors({
   origin: [
-    "http://localhost:5173",
+    // "http://localhost:5173",
     "https://stylenest-e-commerce.netlify.app"
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true,
 }));
 
-app.options("*", cors()); 
+// app.options("*", cors()); 
 app.use(express.json());
 
 // ROUTES
