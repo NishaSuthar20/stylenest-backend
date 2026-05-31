@@ -12,10 +12,13 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://stylenest.vercel.app", // ✅ Vercel URL add karo
+    "https://stylenest-e-commerce.netlify.app"
   ],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true,
 }));
+
+app.options("*", cors()); 
 app.use(express.json());
 
 // ROUTES
