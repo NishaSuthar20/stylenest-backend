@@ -9,7 +9,13 @@ dotenv.config();
 const app = express();
 
 // MIDDLEWARE
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://stylenest.vercel.app", // ✅ Vercel URL add karo
+  ],
+  credentials: true,
+}));
 app.use(express.json());
 
 // ROUTES
